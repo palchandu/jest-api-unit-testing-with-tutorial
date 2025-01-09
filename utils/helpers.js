@@ -23,8 +23,8 @@ const sendEmail = async (options) => {
 };
 
 async function getJwtToken(id) {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_TIME,
+  return jwt.sign({ id }, process.env.JWT_SECRET || "23232344", {
+    expiresIn: process.env.JWT_EXPIRES_TIME || "1d",
   });
 }
 
