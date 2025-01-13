@@ -15,17 +15,18 @@ export const registerUser = async (req, res) => {
     }
 
     password = await bcrypt.hash(password, 10);
-
+    // console.log("passwww", password);
     const user = await User.create({
       name,
       email,
       password,
     });
-
+    //console.log("userr",user)
     const token = await getJwtToken(user?.id);
-
+    //console.log("tttt===",token)
     res.status(201).json({
-      token,
+      ...{ token },
+      ...{ user },
     });
   } catch (error) {
     if (error.code === 11000) {
@@ -67,7 +68,7 @@ export const loginUser = async (req, res, next) => {
     }
 
     const token = await getJwtToken(user?.id);
-
+    console.log("nreewwww", token);
     res.status(200).json({
       token,
     });
