@@ -12,11 +12,9 @@ import {
 
 import { isAuthenticatedUser } from "../middlewares/auth.js";
 
-router.route("/jobs").get(getJobs);
-router.route("/job/:id").get(getJob);
-
+router.route("/jobs").get(isAuthenticatedUser, getJobs);
+router.route("/job/:id").get(isAuthenticatedUser, getJob);
 router.route("/job/new").post(isAuthenticatedUser, newJob);
-
 router
   .route("/job/:id")
   .put(isAuthenticatedUser, updateJob)

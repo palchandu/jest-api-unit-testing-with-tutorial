@@ -21,9 +21,9 @@ export const registerUser = async (req, res) => {
       email,
       password,
     });
-    //console.log("userr",user)
+    console.log("userr",user)
     const token = await getJwtToken(user?.id);
-    //console.log("tttt===",token)
+    console.log("tttt===",token)
     res.status(201).json({
       ...{ token },
       ...{ user },

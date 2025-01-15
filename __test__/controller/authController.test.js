@@ -36,6 +36,11 @@ const userLogin = {
 afterEach(() => {
   jest.restoreAllMocks();
 });
+afterAll(() => {
+  jest.restoreAllMocks();
+  jest.clearAllMocks();
+  jest.resetAllMocks();
+});
 describe("Register User", () => {
   test("should register user", async () => {
     jest.spyOn(bcrypt, "hash").mockResolvedValueOnce("test124");
