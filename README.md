@@ -8,6 +8,10 @@
 
 [Node.js Express testing with Jest and SuperTest](https://medium.com/@it.ermias.asmare/node-js-express-with-jest-and-supertest-e58aaf4c4514)
 
+[How to test mongoose models with jest and mockingoose](https://dev.to/darkmavis1980/how-to-test-mongoose-models-with-jest-and-mockingoose-2k10)
+
+
+
 Here's a Jest test case for your **user registration function**, mocking **Mongoose models** (`userModel`, `CartModel`, `CustomerModel`) to isolate the logic.
 
 ---
